@@ -1,1 +1,1 @@
-db.users_1.aggregate([ { $match: { country: 'USA' } } ])
+db.users.findOne({_id:1}, {fullname: 1});
