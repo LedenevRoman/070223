@@ -1,0 +1,1 @@
+db.users_1.aggregate([ { $match: { country: 'USA' } } ])
