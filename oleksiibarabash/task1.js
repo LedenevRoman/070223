@@ -1,0 +1,3 @@
+db.users.find(
+    {_id:'1'},
+    {fullname:1})
