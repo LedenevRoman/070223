@@ -1,1 +1,18 @@
 db.reactions.findOne()
+---
+db.videos.aggregate([
+  {
+    $group: {
+      _id: null, 
+      avg_duration: { $avg: "$duration_secs" },
+      count: { $sum: 1 } 
+    }
+  },
+  {
+    $project: {
+      _id: 0, 
+      avg_duration: 1,
+      count: 1
+    }
+  }
+])
