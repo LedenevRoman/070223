@@ -1,0 +1,4 @@
+db.videos.aggregate([
+{$match: {_id: {$ne: null}}},
+{$limit : 1}
+])
