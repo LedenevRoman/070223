@@ -1,0 +1,1 @@
+db.posts.aggregate([{$sample: {size: 1}}])
