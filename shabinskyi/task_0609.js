@@ -37,3 +37,27 @@ db.videos.aggregate([
         }
     }
 ])
+
+// Увеличить баланс всех незаблокированных юзеров на 15%
+db.workers.updateMany([
+    {
+        is_blocked: {$ne: true}
+    },
+    {
+        $mul: {balance: 1.15}
+    }
+])
+
+// Увеличить баланс всех юзеров из Germany и USA на 100
+db.users.updateMany([
+    {
+        country: {
+            $in: ['Germany', 'USA']
+        }
+    },
+    {
+        $inc: {
+            balance: 100
+        }
+    }
+])
