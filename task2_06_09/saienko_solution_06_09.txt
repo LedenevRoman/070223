@@ -46,3 +46,4 @@ db.users.updateMany(
     $inc: { balance: 100 }
   }
 )
+----
