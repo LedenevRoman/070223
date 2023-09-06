@@ -1,5 +1,5 @@
 db.reactions.findOne()
----
+----
 db.videos.aggregate([
   {
     $group: {
@@ -16,3 +16,33 @@ db.videos.aggregate([
     }
   }
 ])
+----
+db.videos.aggregate([
+  {
+    $sort: {
+      duration_secs: 1 
+    }
+  },
+  {
+    $limit: 1 
+  },
+  {
+    $project: {
+      _id: 0, 
+      title: 1, 
+      duration: "$duration_secs" 
+    }
+  }
+])
+----
+db.users.updateMany(
+  {
+    $or: [
+      { country: "USA" },
+      { country: "Germany" }
+    ]
+  },
+  {
+    $inc: { balance: 100 }
+  }
+)
