@@ -34,3 +34,15 @@ db.videos.aggregate([
     }
   }
 ])
+----
+db.users.updateMany(
+  {
+    $or: [
+      { country: "USA" },
+      { country: "Germany" }
+    ]
+  },
+  {
+    $inc: { balance: 100 }
+  }
+)
