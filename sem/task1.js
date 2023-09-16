@@ -1,1 +1,0 @@
-db.users.findOne({_id: 1}, {_id: 0, fullname: 1})
